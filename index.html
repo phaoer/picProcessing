@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>test</title>
+    <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    body {
+      margin: 0;
+      text-align: center;
+      height: 100%;
+    }
+    #clipImg {
+      height: 300px;
+      background-color: black;
+    }
+    #file,
+    #clipBtn {
+      margin: 20px;
+    }
+    #view {
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      background-color: #666;
+    }
+    .photo-clip-layer{
+      background-color: white!important;
+    }
+    </style>
+</head>
+
+<body>
+  <div id="clip1">
+    <div id="clipImg"></div>
+    <input type="file" id="uploadimg">
+    <button id="clipBtn">裁剪</button>
+  </div>
+  <div id="clip2" style="display: none;">
+    <div id="view" style="margin-top: 20px;"></div>
+    <button id="up" style="margin-top: 50px;">上传</button>
+  </div>
+</body>
+<script type="text/javascript" src="js/xy_image_optimu.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+          var data = {
+              id:"uploadimg",
+              fun:"fun",
+              isClip:{container:"#clipImg",options:{
+                size: 260,
+                outputSize:[100,100],
+                res: '#view',
+                clip: '#clipBtn'
+            }
+          }
+          }
+          var pic = new picProcessing(data);  //实例化插件，传入图片上传按钮id，和一些配置项   容器设置背景   photo-clip-layer设置hidden
+}
+function fun(data){
+  console.log(data);
+  document.getElementById("clip1").style.display = "none";
+  document.getElementById("clip2").style.display = "block";
+  document.getElementById("up").onclick = function(){
+         alert(data);
+  }
+}
+</script>
+</html>
