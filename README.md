@@ -15,7 +15,7 @@
 #### 引入
 
 ```html
-<script type="text/javascript" src="/js/xy_image_optimu.js"></script>
+<script type="text/javascript" src="js/xy_image_optimu.js"></script>
 <script type="text/javascript">
 window.onload = function(){
     var data = {
