@@ -7,7 +7,7 @@
 
         oScript.setAttribute("type", "text/javascript");
 
-        oScript.setAttribute("src", "/js/picProcessing/" + includeFile[i]);
+        oScript.setAttribute("src", "js/" + includeFile[i]);
 
         oHead.appendChild(oScript);
     }
